@@ -1,0 +1,82 @@
+@import '~antd/es/style/themes/default.less';
+
+html,
+body,
+#root {
+  min-width    : 1336px;
+  height       : 100%;
+  // min-height: 100vh;
+  // overflow-x: auto;
+}
+
+:global {
+
+  html,
+  body {
+    background: #EEF1FC !important;
+  }
+}
+
+.colorWeak {
+  filter: invert(80%);
+}
+
+.ant-layout {
+  min-height: 100vh;
+}
+
+canvas {
+  display: block;
+}
+
+body {
+  text-rendering         : optimizeLegibility;
+  -webkit-font-smoothing : antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+:global {
+  .ant-descriptions-item-content {
+    word-break    : break-all;
+    vertical-align: top;
+  }
+
+  .ant-descriptions-view>table {
+    table-layout: fixed !important;
+  }
+
+  .ant-descriptions-item-label {
+    width         : 130px;
+    white-space   : normal !important;
+    vertical-align: top;
+  }
+}
+
+.ant-form-item-with-help {
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: @screen-xxl) {
+  .ant-table {
+    width     : 100%;
+    overflow-x: auto;
+
+    &-thead>tr,
+    &-tbody>tr {
+
+      >th,
+      >td {
+        white-space: pre;
+
+        >span {
+          display: block;
+        }
+      }
+    }
+  }
+}

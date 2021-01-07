@@ -1,0 +1,228 @@
+.videoPage {
+  position: relative;
+  height  : calc(100vh - 175px);
+
+  >.left {
+    position     : absolute;
+    top          : 0;
+    left         : 0;
+    width        : 250px;
+    height       : 100%;
+    background   : #fff;
+    padding      : 65px 20px 40px 20px;
+    border-radius: 6px;
+    box-shadow   : 0 1px 4px 0 rgba(213, 214, 217, 1);
+
+    .search {
+      position: absolute;
+      top     : 0;
+      left    : 0;
+      width   : 100%;
+      padding : 20px;
+    }
+
+    .pagination {
+      position: absolute;
+      bottom  : 10px;
+      right   : 0;
+      padding : 0 10px;
+    }
+
+    .listMain {
+      height  : 100%;
+      overflow: auto;
+
+      &::-webkit-scrollbar {
+        width : 5px;
+        height: 5px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background   : rgb(239, 239, 239);
+        border-radius: 2px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background   : #bfbfbf;
+        border-radius: 10px;
+      }
+
+      &::-webkit-scrollbar-thumb:hover {
+        background: #333;
+      }
+
+      &::-webkit-scrollbar-corner {
+        background: #179a16;
+      }
+
+      .list {
+        margin : 0;
+        padding: 5px 0 0;
+
+        >li {
+          padding      : 10px 30px 10px 10px;
+          color        : #999;
+          font-size    : 14px;
+          cursor       : pointer;
+          position     : relative;
+          white-space  : nowrap;
+          text-overflow: ellipsis;
+          overflow     : hidden;
+          word-break   : break-all;
+
+          >span {
+            display        : inline-block;
+            width          : 15px;
+            height         : 15px;
+            // background     : url('@/assets/video/normal.png') no-repeat center;
+            background     : url('@/assets/video/select.png') no-repeat center;
+            background-size: 15px 15px;
+            position       : absolute;
+            top            : 13px;
+            right          : 10px;
+          }
+
+          &.disable {
+            background     : #f5f5f5;
+            color          : rgba(0, 0, 0, .25);
+            cursor         : not-allowed;
+            >span{
+              background     : url("@/assets/video/normal.png") no-repeat center;
+            // background     : url("@/assets/video/select.png") no-repeat center;
+            background-size: 15px 15px;
+            }
+          }
+
+          &.nomal:hover,
+          &.active {
+            color     : #5176FD;
+            box-shadow: 0 0 5px rgba(0, 0, 0, .3);
+
+            // >span {
+            //   background     : url("@/assets/video/select.png") no-repeat center;
+            //   background-size: 15px 15px;
+            // }
+          }
+        }
+      }
+    }
+  }
+
+  >.right {
+    height        : 100%;
+    margin-left   : 270px;
+    background    : #fff;
+    border-radius : 6px;
+    display       : flex;
+    flex-direction: column;
+
+    .header {
+      padding      : 10px;
+      height       : 50px;
+      border-bottom: 1px solid #999;
+      flex-shrink  : 0;
+      display      : flex;
+      align-items  : center;
+
+      >.tool {
+        >img {
+          width       : 20px;
+          height      : 20px;
+          margin-right: 10px;
+          cursor      : pointer;
+        }
+      }
+
+      // >h3 {
+      //   margin     : 0;
+      //   color      : #333;
+      //   font-weight: bold;
+      //   font-size  : 20px;
+      // }
+    }
+
+    .videoMain {
+      flex     : auto;
+      padding  : 5px;
+      display  : flex;
+      flex-wrap: wrap;
+
+      >.videoCell {
+        width  : 50%;
+        height : 50%;
+        padding: 5px;
+
+        &.nine {
+          width : 33.3333%;
+          height: 33.3333%;
+        }
+
+        &.sixteen {
+          width : 25%;
+          height: 25%;
+        }
+
+
+        >.video {
+          height       : 100%;
+          background   : #000;
+          border       : 3px solid #417EEC;
+          border-radius: 4px;
+          position     : relative;
+          overflow     : hidden;
+
+          &.selectCell {
+            &::after {
+              position: absolute;
+              top     : 0;
+              left    : 0;
+              width   : 100%;
+              height  : 100%;
+              border  : 4px solid #ff8900;
+              content : ' ';
+            }
+          }
+
+          .mask {
+            position: absolute;
+            top     : 0;
+            left    : 0;
+            z-index : 999;
+            width   : 100%;
+            height  : calc(100% - 36px);
+            overflow: hidden;
+
+            >.title {
+              position   : absolute;
+              top        : 0;
+              left       : 0;
+              width      : 100%;
+              height     : 30px;
+              line-height: 30px;
+              padding    : 0 30px 0 10px;
+              color      : #fff;
+              background : rgba(0, 0, 0, .5);
+              z-index    : 999;
+              transform  : translateY(-30px);
+              transition : all .3s;
+
+              >.close {
+                position: absolute;
+                top     : 5px;
+                right   : 10px;
+                cursor  : pointer;
+              }
+            }
+
+            &:hover {
+              >.title {
+                transform: translateZ(0);
+              }
+            }
+          }
+        }
+
+      }
+    }
+  }
+}

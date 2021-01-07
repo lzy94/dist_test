@@ -1,0 +1,93 @@
+.card {
+  height: calc(100vh - 135px);
+  margin: -20px;
+  padding: 20px;
+  background: #fff;
+}
+
+.liveMain {
+  display: -webkit-flex;
+  display: flex;
+  height: 100%;
+
+  .leftTree, .controlPanel {
+    width: 230px;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .liveList {
+    height: 100%;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+    -webkit-flex: 1;
+    flex: 1;
+
+    .liveListCell {
+      flex: 1;
+
+      .videoPanel {
+        position: relative;
+        height: 100%;
+        background: #000;
+
+        &.showBorder {
+          &:after {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 222;
+            width: 100%;
+            height: 100%;
+            content: ' ';
+            border: 2px solid red;
+          }
+        }
+      }
+
+      .mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 999;
+        width: 100%;
+        height: calc(100% - 36px);
+        overflow: hidden;
+
+        > .liveTitle {
+          margin: 0;
+          padding: 5px 10px;
+          color: #fff;
+          font-size: 15px;
+          background: rgba(0, 0, 0, .8);
+          -webkit-transform: translateY(-32px);
+          transform: translateY(-32px);
+          -webkit-transition: all .3s;
+          transition: all .3s;
+        }
+
+        &:hover {
+          > .liveTitle {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+          }
+        }
+      }
+    }
+
+    .liveToolBar {
+      width: 100%;
+      height: 30px;
+
+      > img {
+        float: right;
+        width: 20px;
+        margin-top: 5px;
+        margin-left: 10px;
+        cursor: pointer;
+      }
+    }
+  }
+}

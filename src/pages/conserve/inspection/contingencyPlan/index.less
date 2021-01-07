@@ -1,0 +1,237 @@
+.statistics,
+.legend {
+  position     : absolute;
+  top          : 60px;
+  overflow     : hidden;
+  border-radius: 5px 5px 2px 2px;
+
+  >.header {
+    text-align   : center;
+    padding      : 6px 0;
+    font-size    : 12px;
+    color        : #fff;
+    background   : linear-gradient(180deg, rgba(99, 141, 214, 1) 0%, rgba(30, 60, 114, 1) 100%);
+    border-radius: 5px 5px 2px 2px;
+  }
+
+  >.body {
+    padding   : 8px;
+    background: #E6E6E6;
+
+    >.list {
+      background     : #fff;
+      margin-top     : 5px;
+      padding        : 5px 10px;
+      display        : flex;
+      align-items    : center;
+      justify-content: space-between;
+      border-radius  : 2px;
+
+      >p {
+        margin   : 0;
+        font-size: 15px;
+
+        >img {
+          width         : 18px;
+          vertical-align: text-bottom;
+        }
+      }
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.legend {
+  left   : 25px;
+  z-index: 99;
+  width  : 150px;
+}
+
+.statistics {
+  right  : 25px;
+  z-index: 99;
+  width  : 250px;
+
+  >.body {
+    >.list {
+      flex-direction : column;
+      justify-content: left;
+      align-items    : self-start;
+
+      >.listBody {
+        width          : 100%;
+        display        : flex;
+        align-items    : center;
+        justify-content: space-between;
+      }
+
+      p {
+        color    : #1B6FD7;
+        font-size: 12px;
+
+        >span {
+          color: #E35464;
+        }
+      }
+    }
+  }
+}
+
+.buttonGroup {
+  position: absolute;
+  right   : 30px;
+  bottom  : 30px;
+  z-index : 99;
+}
+
+
+.readModal {
+  :global {
+    .ant-modal-body {
+      padding: 0 0 24px 0;
+    }
+
+    .ant-form-inline .ant-form-item {
+      margin-right: 5px;
+    }
+
+    .ant-form-inline .ant-form-item-control {
+      line-height: 30px;
+    }
+  }
+
+  .content {
+    display: flex;
+    height : 680px;
+
+    >.leftList {
+      width: 55%;
+    }
+
+    >.rightBody {
+      margin-left: 1%;
+      width      : 44%
+    }
+
+    >.leftList,
+    >.rightBody {
+      padding-top: 60px;
+      position   : relative;
+    }
+
+    .header {
+      display        : flex;
+      justify-content: space-between;
+      align-items    : center;
+      padding        : 0 0 0 12px;
+      position       : absolute;
+
+      width: 100%;
+      top  : 13px;
+      left : 0;
+
+      >h3 {
+        font-size  : 15px;
+        margin     : 0;
+        font-weight: bold;
+
+        >span {
+          display       : inline-block;
+          vertical-align: text-bottom;
+          width         : 5px;
+          height        : 20px;
+          background    : #0C69FF;
+          margin-right  : 10px;
+        }
+      }
+
+      &.detail {
+        top: 20px;
+
+        >h3 {
+          >span {
+            background: #F9787C;
+          }
+        }
+      }
+    }
+  }
+}
+
+.list {
+  position: relative;
+
+  padding: 0;
+
+  >li {
+    display    : flex;
+    align-items: center;
+    padding    : 10px 70px 10px 10px;
+    position   : relative;
+    cursor     : pointer;
+
+    &:hover {
+      background: #D5D6D9;
+    }
+
+    &:after {
+      display   : block;
+      content   : ' ';
+      width     : 98%;
+      height    : 1px;
+      position  : absolute;
+      left      : 10px;
+      bottom    : 0;
+      background: #E6E6E6;
+    }
+
+    >img {
+      width        : 80px;
+      height       : 80px;
+      border-radius: 5px;
+    }
+
+    >.liContent {
+      padding-left: 10px;
+      width       : 400px;
+
+      >h3 {
+        margin   : 0;
+        font-size: 16px;
+        color    : #504E4E;
+      }
+
+      >p {
+        margin   : 0;
+        font-size: 12px;
+        color    : #1E1D1D;
+
+        &.pC {
+          font-size: 20px;
+          color    : #504E4E;
+        }
+      }
+    }
+  }
+}
+
+.state {
+  position     : absolute;
+  top          : 10px;
+  right        : 10px;
+  display      : inline-block;
+  padding      : 0 8px;
+  color        : #fff;
+  border-radius: 12px;
+}
+
+.stateOne {
+  background: #E35464;
+}
+
+.stateTow {
+  background: #F19149;
+}

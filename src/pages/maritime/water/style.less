@@ -1,0 +1,392 @@
+.main {
+  position: relative;
+  display: flex;
+  min-height: calc(100vh - 100px);
+  //min-height: 700px;
+
+  > .leftList {
+    position: relative;
+    flex-shrink: 0;
+    width: 220px;
+    height: inherit;
+    margin-right: 10px;
+    padding: 90px 10px 40px 10px;
+    overflow: auto;
+    background: #fff;
+
+    > .title {
+      position: absolute;
+      top: 15px;
+      left: 0;
+      width: 100%;
+      margin: 0;
+      padding: 0 10px;
+
+      > h3 {
+        color: #000;
+        font-size: 16px;
+
+        > span {
+          display: inline-block;
+          width: 4px;
+          height: 15px;
+          margin-right: 10px;
+          vertical-align: sub;
+          background: #5176FD;
+        }
+      }
+
+
+    }
+
+    .pagination {
+      position: absolute;
+      right: 0;
+      bottom: 10px;
+      padding: 0 10px;
+    }
+
+    .pointList {
+      margin: 0;
+      padding: 0;
+
+      > li {
+        padding: 10px 0 10px 10px;
+        border-top: 1px solid #eee;
+        cursor: pointer;
+        transition: all .3s;
+
+        &:first-child {
+          border-top: 0;
+        }
+
+        &.active,
+        &:hover {
+          background: #eee;
+        }
+      }
+    }
+  }
+
+  > .content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    > .topContent, > .bottomList {
+      background: #fff;
+    }
+
+    > .topContent {
+      display: flex;
+      flex: 1;
+      flex-direction: column;
+      margin-bottom: 10px;
+      border-radius: 6px;
+      box-shadow: 0 1px 4px 0 rgba(213, 214, 217, 1);
+
+
+      > .title {
+        flex-shrink: 0;
+        width: 100%;
+        height: 50px;
+        padding: 0 20px;
+        color: #333;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 50px;
+        border-bottom: 1px solid #B7B8C0;
+      }
+
+      > .chartContent {
+        display: flex;
+        flex: auto;
+        padding: 20px;
+
+        .chartPanel,
+        .videoPanel {
+          position: relative;
+          flex: auto;
+          width: 50%;
+        }
+
+        .videoPanel {
+          padding: 30px 0 0 30px;
+
+          > h3 {
+            position: absolute;
+            top: 0;
+            margin: 0;
+            font-size: 15px;
+          }
+
+          &::after {
+            position: absolute;
+            top: 20%;
+            left: 0;
+            display: block;
+            width: 1px;
+            height: 60%;
+            background: #B7B8C0;
+            content: ' ';
+          }
+        }
+      }
+    }
+
+    > .bottomList {
+      height: 300px;
+      padding: 0 20px;
+
+      > h3 {
+        height: 40px;
+        margin: 0;
+        color: #000;
+        font-size: 15px;
+        line-height: 40px;
+
+        > span {
+          display: inline-block;
+          //margin-left: 20px;
+          width: 4px;
+          height: 15px;
+          margin-right: 10px;
+          vertical-align: middle;
+          background: #F9787C;
+        }
+      }
+    }
+  }
+}
+
+
+.mapRight {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  z-index: 9;
+  width: 500px;
+  //transform: translateY(-50%);
+
+  > .video {
+    width: 100%;
+    height: 300px;
+    margin-bottom: 15px;
+    background: #000;
+    border: 2px solid rgba(65, 126, 236, 1);
+    border-radius: 2px;
+  }
+
+  .chartsPanel {
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .5);
+  }
+
+  .charts {
+    width: 100%;
+    height: 350px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 4px;
+  }
+}
+
+.mapLegend {
+  position: absolute;
+  //top: 50px;
+  //left: 50px;
+  left: 250px;
+  bottom: 10px;
+  z-index: 9;
+  width: 160px;
+  overflow: hidden;
+  border-radius: 10px 10px 4px 4px;
+  transition: all .3s;
+
+  > h3 {
+    margin: 0;
+    padding: 8px 0;
+    color: #fff;
+    text-align: center;
+    background: linear-gradient(180deg, rgba(99, 141, 214, 1) 0%, rgba(30, 60, 114, 1) 100%);
+  }
+
+  > .legengContent {
+    padding: 7px;
+    background: #E6E6E6;
+
+    > .legendCell {
+      > img {
+        width: 25px;
+        margin-right: 5px;
+        vertical-align: top;
+      }
+
+      margin-top: 10px;
+      padding: 5px;
+      color: #333;
+      font-size: 16px;
+      background: #fff;
+
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+}
+
+.errorMarker {
+  position: relative;
+
+  > .marker {
+    position: relative;
+    z-index: 9;
+    width: 30px;
+  }
+
+  > .markerBase {
+    position: absolute;
+    bottom: -19px;
+    left: -6px;
+    z-index: 8;
+    width: 40px;
+  }
+}
+
+.infoWin {
+  width: 250px;
+
+  > h3 {
+    margin: 0;
+    color: #000;
+    font-weight: bold;
+    font-size: 15px;
+
+    > span {
+      display: inline-block;
+      width: 4px;
+      height: 15px;
+      margin-right: 5px;
+      vertical-align: sub;
+      background: #5176FD;
+    }
+  }
+
+  p {
+    margin: 0;
+    color: #000;
+
+    > span {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    > span.normal {
+      color: #3979EE
+    }
+
+    > span.warn {
+      color: #EE394E;
+
+    }
+  }
+}
+
+.leftMainList {
+  position: absolute;
+  top: -10px;
+  bottom: 0;
+  left: 0;
+  z-index: 200;
+  width: 240px;
+  background: #fff;
+  padding: 80px 0 40px;
+  box-shadow: 0 -10px 15px rgba(0, 0, 0, .5);
+  transition: all .3s;
+
+  > .title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: 10px;
+  }
+
+  > .listPanel {
+    padding: 10px;
+    height: 100%;
+    overflow-y: auto;
+  }
+
+  .list {
+    padding: 0;
+    margin: 0;
+
+    > li {
+      padding: 10px 5px;
+      border-top: 1px solid #eee;
+      cursor: pointer;
+
+      > h3, > p {
+        padding: 0;
+        margin: 0;
+      }
+
+      > p {
+        font-size: 12px;
+      }
+
+      &.error {
+
+        > h3, > p {
+          color: red
+        }
+      }
+
+      &.active,
+      &:hover {
+        background: #eee;
+      }
+
+      &:first-child {
+        border-top: 0;
+      }
+    }
+  }
+
+  > .pagination {
+    position: absolute;
+    right: 0;
+    bottom: 10px;
+  }
+}
+
+.leftClose {
+  position: absolute;
+  right: -22px;
+  top: 50%;
+  background: #3A8BFF;
+  transform: translateY(-50%);
+  color: #fff;
+  padding: 13px 4px;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+
+  .closeBtn {
+    -webkit-animation: closeAim .5s infinite linear;
+    animation: closeAim .5s infinite linear;
+  }
+}
+
+.onClose {
+  transform: translateX(-240px);
+}
+
+@keyframes closeAim {
+  from {
+    transform: translateX(-2px);
+  }
+
+  to {
+    transform: translateX(2px);
+  }
+}

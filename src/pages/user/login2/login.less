@@ -1,0 +1,118 @@
+
+.loginMain {
+  p, h3 {
+    padding: 0;
+    margin: 0;
+  }
+
+  //display: -webkit-flex;
+  //display: flex;
+  //align-items: center;
+  //justify-content: center;
+  height: 100vh;
+  background: #3E759B;
+
+  .loginPanel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: flex;
+    width: 1060px;
+    height: 800px;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+    transform: translate(-50%, -50%);
+
+    > .left {
+      width: 425px;
+      height: 100%;
+      background: url("../../../assets/login/bg.png") no-repeat center;
+      background-size: cover;
+    }
+
+    > .right {
+      flex: 1;
+      padding: 32px 32px 0 125px;
+      background: #fff;
+
+      > .logo {
+        text-align: right;
+
+        > img {
+          width: 80px;
+        }
+      }
+
+      > .title {
+        margin-top: 32px;
+
+        > h3 {
+          font-size: 30px;
+          font-weight: 800;
+          color: #333;
+        }
+
+        > p {
+          font-size: 14px;
+          color: #666;
+        }
+      }
+
+      > .Form {
+        width: 313px;
+        margin-top: 70px;
+
+        :global {
+          .ant-form-item {
+            margin-bottom: 22px;
+          }
+
+          .has-error .ant-input-affix-wrapper .ant-input {
+            border-color: #f5222d !important;
+          }
+        }
+
+        > .tips {
+          width: 210px;
+          color: #666;
+          font-size: 14px;
+          margin-bottom: 30px;
+          line-height: 18px;
+        }
+
+        .Input, .loginButton {
+          height: 45px;
+          font-size: 18px;
+          border-radius: 10px;
+        }
+
+        .loginButton {
+          background: #3E759B;
+          border-color: #3E759B;
+        }
+
+        .Input {
+          :global {
+            .ant-input {
+              font-size: 17px;
+              border: 2px solid #EEE;
+              border-radius: 10px;
+
+              &:not(:first-child) {
+                padding-left: 35px;
+              }
+
+              &:hover, &:focus {
+                border-color: #3E759B;
+                border-right-width: 2px !important;
+              }
+
+              &:focus {
+                box-shadow: 0 0 0 2px rgba(58, 140, 255, 0.2);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

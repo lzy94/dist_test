@@ -1,0 +1,77 @@
+.main {
+  height    : calc(100vh - 140px);
+  margin    : -20px -20px -20px -20px;
+  background: #fff;
+  position  : relative;
+
+  :global {
+    .amap_markers_pop_window {
+      border    : 0;
+      box-shadow: 0 8px 13px 0 #D5D6D9;
+    }
+  }
+}
+
+.rightMain {
+  position  : absolute;
+  top       : 0;
+  right     : 0;
+  z-index   : 99;
+  width     : 350px;
+  height    : 100%;
+  background: rgba(255, 255, 255, .8);
+  box-shadow: 0 8px 13px 0 rgba(213, 214, 217, 1);
+  padding   : 15px;
+}
+
+.search {
+  >h3 {
+    font-size: 16px;
+    color    : #3D74CF
+  }
+
+  margin-bottom: 10px;
+}
+
+.list {
+  height    : calc(100% - 214px);
+  overflow-y: auto;
+}
+
+.infoWIn {
+  width: 400px;
+
+  h3 {
+    font-size: 20px;
+    color    : #333;
+    margin   : 5px 0;
+  }
+
+  p,
+  span {
+    font-size: 16px;
+  }
+
+  p {
+    color : #333;
+    margin: 5px 0;
+  }
+
+  .time {
+    color: #999;
+  }
+}
+
+.modalMain {
+  height  : 600px;
+  position: relative;
+
+  .rightMain {
+    width: 300px;
+  }
+}
+
+.btnGroup {
+  display        : flex;
+  justify-content: space-between;
+}
